@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="OpenCart Test Suite">
+    <test name="Full Regression Test">
+        <classes>
+            <!-- 4 теста: 3 успешни регистрации + 1 грешка -->
+            <class name="tests.RegistrationTests"/>
+
+            <!-- 4 теста: 3 успешни логирања + 1 грешна лозинка -->
+            <class name="tests.LoginTests"/>
+
+            <!-- 2 теста: Додавање iPhone и MacBook со количина -->
+            <class name="tests.CartTests"/>
+        </classes>
+    </test>
+</suite>
