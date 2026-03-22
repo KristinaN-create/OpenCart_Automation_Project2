@@ -9,7 +9,7 @@ import pages.RegisterPage;
 
 public class RegistrationTests extends BaseTest {
 
-    // 1. ПОДАТОЦИ ЗА ТЕСТОТ (Data Provider)
+
     @DataProvider(name = "registrationData")
     public Object[][] getRegData() {
         return new Object[][] {
@@ -19,7 +19,7 @@ public class RegistrationTests extends BaseTest {
         };
     }
 
-    // ТЕСТ 1, 2 и 3 (Автоматски се пушта 3 пати со податоците погоре)
+
     @Test(dataProvider = "registrationData", priority = 1)
     public void testSuccessfulRegistration(String fName, String lName, String email, String phone, String pass) {
         HomePage homePage = new HomePage(driver);
@@ -32,7 +32,7 @@ public class RegistrationTests extends BaseTest {
                 "Регистрацијата не успеа за: " + email);
     }
 
-    // ТЕСТ 4: Проверка за веќе постоечки е-маил
+
     @Test(priority = 2)
     public void testRegistrationWithExistingEmail() {
         HomePage homePage = new HomePage(driver);
@@ -40,7 +40,7 @@ public class RegistrationTests extends BaseTest {
 
         homePage.navigateToRegister();
 
-        // Овој меил треба веќе да постои за да фрли грешка
+
         registerPage.registerUser("Test", "User", "test_qa_user@mail.com", "070000000", "Lozinka123!");
 
         String error = registerPage.getErrorMessage();

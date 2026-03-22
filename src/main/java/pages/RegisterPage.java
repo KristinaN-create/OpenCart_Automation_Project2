@@ -6,7 +6,6 @@ import org.openqa.selenium.WebDriver;
 public class RegisterPage {
     private WebDriver driver;
 
-    // Локатори за елементите на страната
     private By firstNameField = By.id("input-firstname");
     private By lastNameField = By.id("input-lastname");
     private By emailField = By.id("input-email");
@@ -21,7 +20,6 @@ public class RegisterPage {
         this.driver = driver;
     }
 
-    // Главниот метод кој го повикуваме во тестот
     public void registerUser(String fName, String lName, String email, String phone, String pass) {
         driver.findElement(firstNameField).sendKeys(fName);
         driver.findElement(lastNameField).sendKeys(lName);
@@ -33,7 +31,6 @@ public class RegisterPage {
         driver.findElement(continueButton).click();
     }
 
-    // Овој метод ти светеше црвено - сега е тука!
     public String getErrorMessage() {
         return driver.findElement(errorAlert).getText();
     }

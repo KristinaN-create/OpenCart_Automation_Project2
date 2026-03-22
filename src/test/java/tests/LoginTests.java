@@ -9,7 +9,7 @@ import pages.LoginPage;
 
 public class LoginTests extends BaseTest {
 
-    // 1. ПОДАТОЦИ ЗА ЛОГИРАЊЕ (3 различни корисници)
+
     @DataProvider(name = "loginData")
     public Object[][] getLoginData() {
         return new Object[][] {
@@ -19,7 +19,7 @@ public class LoginTests extends BaseTest {
         };
     }
 
-    // ТЕСТ 5, 6 и 7 (Успешно логирање)
+
     @Test(dataProvider = "loginData", priority = 1)
     public void testSuccessfulLogin(String email, String pass) {
         HomePage homePage = new HomePage(driver);
@@ -28,11 +28,11 @@ public class LoginTests extends BaseTest {
         homePage.navigateToLogin();
         loginPage.loginUser(email, pass);
 
-        // Проверка дали насловот на страната е "My Account"
+
         Assert.assertEquals(driver.getTitle(), "My Account", "Логирањето не успеа за: " + email);
     }
 
-    // ТЕСТ 8: Неуспешно логирање со погрешна лозинка
+
     @Test(priority = 2)
     public void testLoginWithInvalidPassword() {
         HomePage homePage = new HomePage(driver);

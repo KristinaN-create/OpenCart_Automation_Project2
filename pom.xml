@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.example</groupId>
-    <artifactId>SeleniumVezbi</artifactId>
+    <artifactId>OpenCart_Automation_Project</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
@@ -23,18 +23,18 @@
             <scope>test</scope>
         </dependency>
 
+        <!-- Selenium Java -->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>4.15.0</version>
+        </dependency>
+
         <!-- WebDriverManager -->
         <dependency>
             <groupId>io.github.bonigarcia</groupId>
             <artifactId>webdrivermanager</artifactId>
             <version>5.5.3</version>
-        </dependency>
-
-        <!-- Selenium Java -->
-        <dependency>
-            <groupId>org.openqa.selenium</groupId>
-            <artifactId>selenium-java</artifactId>
-            <version>4.13.0</version>
         </dependency>
     </dependencies>
 

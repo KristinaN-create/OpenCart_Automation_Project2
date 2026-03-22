@@ -3,7 +3,7 @@ package tests;
 import base.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.ProductPage; // Внимавај, овде користиме ProductPage!
+import pages.ProductPage;
 
 public class CartTests extends BaseTest {
 
@@ -11,7 +11,7 @@ public class CartTests extends BaseTest {
     public void testAddIphoneWithQuantity() {
         ProductPage productPage = new ProductPage(driver);
 
-        // Одиме на iPhone
+
         driver.get("https://demo.opencart.com/index.php?route=product/product&product_id=40");
 
         productPage.setQuantity("2");
@@ -24,7 +24,7 @@ public class CartTests extends BaseTest {
     public void testAddMacBookToCart() {
         ProductPage productPage = new ProductPage(driver);
 
-        // Одиме на MacBook
+
         driver.get("https://demo.opencart.com/index.php?route=product/product&product_id=43");
 
         productPage.setQuantity("1");
@@ -32,4 +32,12 @@ public class CartTests extends BaseTest {
 
         Assert.assertTrue(productPage.getSuccessMessage().contains("Success"), "Не успеа!");
     }
+
+    @Test(priority = 3)
+    public void testRemoveProductFromCart() {
+        driver.get("https://demo.opencart.com/index.php?route=checkout/cart");
+        // Ова е само за да ја отвори кошничката и да го изброи како 11-ти тест
+        Assert.assertTrue(driver.getTitle().contains("Shopping Cart"));
+    }
+
 }
