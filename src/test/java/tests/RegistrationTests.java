@@ -20,7 +20,7 @@ public class RegistrationTests extends BaseTest {
     }
 
 
-    @Test(dataProvider = "registrationData", priority = 1)
+    @Test(dataProvider = "registrationData", priority = 1, groups = {"smoke", "regression"})
     public void testSuccessfulRegistration(String fName, String lName, String email, String phone, String pass) {
         HomePage homePage = new HomePage(driver);
         RegisterPage registerPage = new RegisterPage(driver);
@@ -33,7 +33,7 @@ public class RegistrationTests extends BaseTest {
     }
 
 
-    @Test(priority = 2)
+    @Test(dataProvider = "registrationData", priority = 2, groups = {"smoke", "regression"})
     public void testRegistrationWithExistingEmail() {
         HomePage homePage = new HomePage(driver);
         RegisterPage registerPage = new RegisterPage(driver);
