@@ -20,7 +20,7 @@ public class LoginTests extends BaseTest {
     }
 
 
-    @Test(dataProvider = "loginData", priority = 1)
+    @Test(dataProvider = "registrationData", priority = 1, groups = {"smoke", "regression"})
     public void testSuccessfulLogin(String email, String pass) {
         HomePage homePage = new HomePage(driver);
         LoginPage loginPage = new LoginPage(driver);
@@ -33,7 +33,7 @@ public class LoginTests extends BaseTest {
     }
 
 
-    @Test(priority = 2)
+    @Test(dataProvider = "registrationData", priority = 2, groups = {"smoke", "regression"})
     public void testLoginWithInvalidPassword() {
         HomePage homePage = new HomePage(driver);
         LoginPage loginPage = new LoginPage(driver);
