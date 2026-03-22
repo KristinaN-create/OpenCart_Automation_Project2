@@ -14,7 +14,7 @@ import java.util.Collections;
 public class BaseTest {
     public WebDriver driver;
 
-    @BeforeMethod
+    @BeforeMethod(alwaysRun = true)
     public void setUp() {
 
         WebDriverManager.chromedriver().setup();
@@ -44,7 +44,7 @@ public class BaseTest {
         driver.get("https://demo.opencart.com/");
     }
 
-    @AfterMethod
+    @AfterMethod(alwaysRun = true)
     public void tearDown() {
 
          if (driver != null) {
