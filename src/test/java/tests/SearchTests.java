@@ -7,14 +7,14 @@ import pages.SearchPage;
 
 public class SearchTests extends BaseTest {
 
-    @Test(priority = 1)
+    @Test(dataProvider = "registrationData", priority = 1, groups = {"smoke", "regression"})
     public void testSearchForiPhone() {
         SearchPage searchPage = new SearchPage(driver);
         searchPage.searchForProduct("iPhone");
         Assert.assertTrue(searchPage.isProductVisible("iPhone"), "iPhone не е пронајден!");
     }
 
-    @Test(priority = 2)
+    @Test(dataProvider = "registrationData", priority = 2, groups = {"smoke", "regression"})
     public void testSearchForMacBook() {
         SearchPage searchPage = new SearchPage(driver);
         searchPage.searchForProduct("MacBook");
