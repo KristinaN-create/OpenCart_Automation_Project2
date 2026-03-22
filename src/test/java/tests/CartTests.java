@@ -7,7 +7,7 @@ import pages.ProductPage;
 
 public class CartTests extends BaseTest {
 
-    @Test(priority = 1)
+    @Test(dataProvider = "registrationData", priority = 1, groups = {"smoke", "regression"})
     public void testAddIphoneWithQuantity() {
         ProductPage productPage = new ProductPage(driver);
 
@@ -20,7 +20,7 @@ public class CartTests extends BaseTest {
         Assert.assertTrue(productPage.getSuccessMessage().contains("Success"), "Не успеа!");
     }
 
-    @Test(priority = 2)
+    @Test(dataProvider = "registrationData", priority = 2, groups = {"smoke", "regression"})
     public void testAddMacBookToCart() {
         ProductPage productPage = new ProductPage(driver);
 
@@ -33,7 +33,7 @@ public class CartTests extends BaseTest {
         Assert.assertTrue(productPage.getSuccessMessage().contains("Success"), "Не успеа!");
     }
 
-    @Test(priority = 3)
+    @Test(dataProvider = "registrationData", priority = 3, groups = {"smoke", "regression"})
     public void testRemoveProductFromCart() {
         driver.get("https://demo.opencart.com/index.php?route=checkout/cart");
         // Ова е само за да ја отвори кошничката и да го изброи како 11-ти тест
